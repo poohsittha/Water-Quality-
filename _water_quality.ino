@@ -4,14 +4,13 @@ int redled = 6;
 int greenled = 7;
 
 void setup(void) {
-  Serial.begin(9600); // Initialize Serial communication
+  Serial.begin(9600); 
   pinMode(redled, OUTPUT);
   pinMode(greenled, OUTPUT);
 }
 
 void loop(void) {
   int sensorValue = analogRead(A0);
-  // print out the value you read:
   int turbidity = map(sensorValue, 0, 700, 100, 0);
 
   Serial.print("TURBIDITY: ");
