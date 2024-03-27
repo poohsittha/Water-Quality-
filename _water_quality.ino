@@ -1,12 +1,12 @@
 #include <Arduino.h>
 
-int redled = 6;
-int greenled = 7;
+int leftled = 6;
+int rightled = 7;
 
 void setup(void) {
   Serial.begin(9600); 
-  pinMode(redled, OUTPUT);
-  pinMode(greenled, OUTPUT);
+  pinMode(leftled, OUTPUT);
+  pinMode(rightled, OUTPUT);
 }
 
 void loop(void) {
@@ -18,11 +18,11 @@ void loop(void) {
   Serial.println("%");
 
   if (turbidity < 35) {
-    digitalWrite(redled, HIGH);
-    digitalWrite(greenled, LOW);
+    digitalWrite(leftled, HIGH);
+    digitalWrite(rightled, LOW);
   } else {
-    digitalWrite(greenled, HIGH);
-    digitalWrite(redled, HIGH);
+    digitalWrite(leftled, HIGH);
+    digitalWrite(rightled, HIGH);
   }
 
   delay(1000);
